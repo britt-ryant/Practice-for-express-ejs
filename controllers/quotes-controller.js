@@ -1,35 +1,25 @@
 const quoteDB = require(`../models/quoteDB.js`);
 
 module.exports = {
-	index(req, res) {
+	index(req, res, next) {
 		quoteDB.findAll()
-		.then(results => {
-			res.json({
-				message:`ok`,
-				data: results
-			})
+		.then((quotes) => {
+			res.locals.quotes = quotes;
+			next();
 		})
 		.catch(err => {
-			res.status(500).json({
-				message: `500 : ERROR`,
-				data: err
-			})
+			next(err)
 		})
 	},
 
-	findOne(req, res) {
+	findOne(req, res, next) {
 		quoteDB.findById(req.params.id)
-		.then(result => {
-			res.json({
-				message: `ok`,
-				data: result
-			})
+		.then((quote) => {
+			res.locals.quote = quote;
+			next()
 		})
 		.catch(err => {
-			res.status(500).json({
-				message: `500 FUCKED UP`,
-				data: err
-			})
+			next(err)
 		})
 	},
 

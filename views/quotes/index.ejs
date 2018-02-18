@@ -1,0 +1,7 @@
+<h1>Quotes Index Page</h1>
+
+<ul>
+	<% quotes.forEach((quote) => { %>
+		<li><a href="/quotes/<%=quote.id %>"><%= quote.content %></a></li>
+	<% }) %> 
+</ul>

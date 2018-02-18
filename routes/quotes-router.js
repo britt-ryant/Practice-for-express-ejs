@@ -1,5 +1,6 @@
 const quotesRouter = require(`express`).Router();
 const quotesController = require(`../controllers/quotes-controller.js`)
+const viewsController = require(`../controllers/views-controller.js`)
 
 
 // quotesRouter.get(`/`, (req, res) => {
@@ -19,9 +20,9 @@ const quotesController = require(`../controllers/quotes-controller.js`)
 // })
 
 
-quotesRouter.get(`/`, quotesController.index)
+quotesRouter.get(`/`, quotesController.index, viewsController.showQuotes)
 quotesRouter.post(`/`, quotesController.create)
-quotesRouter.get(`/:id`, quotesController.findOne)
+quotesRouter.get(`/:id`, quotesController.findOne, viewsController.showOneQuote)
 quotesRouter.put(`/:id`, quotesController.update)
 quotesRouter.delete(`/:id`, quotesController.destroy)
 
