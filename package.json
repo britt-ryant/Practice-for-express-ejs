@@ -1,0 +1,32 @@
+{
+  "name": "practice-for-express-ejs",
+  "version": "1.0.0",
+  "description": "Practice for express and ejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/britt-ryant/Practice-for-express-ejs.git"
+  },
+  "author": "Ryan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/britt-ryant/Practice-for-express-ejs/issues"
+  },
+  "homepage": "https://github.com/britt-ryant/Practice-for-express-ejs#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "pg-promise": "^7.5.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
