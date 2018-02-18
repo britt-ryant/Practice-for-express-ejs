@@ -20,5 +20,9 @@ const quotesController = require(`../controllers/quotes-controller.js`)
 
 
 quotesRouter.get(`/`, quotesController.index)
+quotesRouter.post(`/`, quotesController.create)
+quotesRouter.get(`/:id`, quotesController.findOne)
+quotesRouter.put(`/:id`, quotesController.update)
+quotesRouter.delete(`/:id`, quotesController.destroy)
 
 module.exports = quotesRouter
